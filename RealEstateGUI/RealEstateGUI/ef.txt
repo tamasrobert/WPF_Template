@@ -1,0 +1,13 @@
+Install-Package Microsoft.EntityFrameworkCore -Version 5.0.13
+Install-Package Microsoft.EntityFrameworkCore.Design -Version 5.0.13
+Install-Package Microsoft.EntityFrameworkCore.Tools -Version 5.0.13
+Install-Package Pomelo.EntityFrameworkCore.MySql -Version 5.0.4
+
+
+Server=localhost;Database=14f_iskola;Uid=root;Pwd=;
+
+Scaffold-DbContext "Server=localhost;Database=radioadok;Uid=root;Pwd=;" Pomelo.EntityFrameworkCore.MySql -OutputDir Models
+
+
+
+

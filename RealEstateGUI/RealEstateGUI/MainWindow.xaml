@@ -1,0 +1,38 @@
+﻿<Window x:Class="RealEstateGUI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RealEstateGUI"
+        mc:Ignorable="d"
+        Title="Ingatlanok" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+
+        <ListBox x:Name="LB_sellers" IsSynchronizedWithCurrentItem="True">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Label Content="{Binding Name}"></Label>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <StackPanel Grid.Column="1">
+            <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
+                <Label Content="Eladó neve:" MinWidth="150"/>
+                <Label Content="{Binding Name}" MinWidth="100"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
+                <Label Content="Eladó telefonszáma:" MinWidth="150"/>
+                <Label Content="{Binding Phone}" MinWidth="100"/>
+            </StackPanel>
+            <Button x:Name="BTN_loadHirdetesek" Content="Hirdetések betöltése" Margin="5" Click="BTN_loadHirdetesek_Click"/>
+            <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
+                <Label Content="Hirdetések száma:" MinWidth="150"/>
+                <Label x:Name="LBL_hirdetesekSzama" MinWidth="100"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>
